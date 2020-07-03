@@ -13,4 +13,4 @@ services:
   # this creates a service per class whose id is the fully-qualified class name
   ORMBundle\:
     resource: '../../*'
-    exclude: '../../{DependencyInjection}'
+    exclude: '../../{DependencyInjection,DQL}'
