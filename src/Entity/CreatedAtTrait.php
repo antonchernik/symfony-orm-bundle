@@ -10,24 +10,15 @@ use Doctrine\ORM\Mapping as ORM;
 trait CreatedAtTrait
 {
     /**
-     * @var DateTimeInterface
-     *
      * @ORM\Column(type="datetime")
      */
     private DateTimeInterface $createdAt;
 
-    /**
-     * @return DateTimeInterface
-     */
     public function getCreatedAt(): DateTimeInterface
     {
         return $this->createdAt;
     }
 
-    /**
-     * @param DateTimeInterface $createdAt
-     * @return $this
-     */
     public function setCreatedAt(DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;

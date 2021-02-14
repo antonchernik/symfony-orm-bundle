@@ -5,9 +5,9 @@
   "license": "MIT",
   "require": {
     "php": "^7.2",
-    "doctrine/annotations": "^1.10",
-    "ramsey/uuid-doctrine": "^1.6",
-    "symfony/orm-pack": "^1.0"
+    "doctrine/annotations": ">=1.10",
+    "ramsey/uuid-doctrine": ">=1.6",
+    "symfony/orm-pack": ">=1.0"
   },
   "autoload": {
     "psr-4": { "ORMBundle\\": "src/" }

@@ -10,25 +10,16 @@ use Doctrine\ORM\Mapping as ORM;
 trait UpdatedAtTrait
 {
     /**
-     * @var DateTimeInterface
-     *
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private DateTimeInterface $updatedAt;
+    private ?DateTimeInterface $updatedAt;
 
-    /**
-     * @return DateTimeInterface|null
-     */
     public function getUpdatedAt(): ?DateTimeInterface
     {
         return $this->updatedAt;
     }
 
-    /**
-     * @param DateTimeInterface $updatedAt
-     * @return \App\Entity\UpdatedAtTrait
-     */
-    public function setUpdatedAt(DateTimeInterface $updatedAt): self
+    public function setUpdatedAt(?DateTimeInterface $updatedAt): self
     {
         $this->updatedAt = $updatedAt;
 
