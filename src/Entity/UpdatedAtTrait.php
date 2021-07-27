@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace ORMBundle\Entity;
 
+use DateTime;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -31,6 +32,6 @@ trait UpdatedAtTrait
      */
     public function refreshUpdatedAt(): void
     {
-        $this->updatedAt = new \DateTime();
+        $this->updatedAt = new DateTime();
     }
 }
