@@ -6,14 +6,17 @@ namespace ORMBundle\DQL;
 
 use Doctrine\ORM\Query\AST\Functions\FunctionNode;
 use Doctrine\ORM\Query\Lexer;
+use Doctrine\ORM\Query\Parser;
+use Doctrine\ORM\Query\QueryException;
+use Doctrine\ORM\Query\SqlWalker;
 
 class PgpSymEncrypt extends FunctionNode
 {
-    protected $data;
+    protected mixed $data;
 
-    protected $secret;
+    protected mixed $secret;
 
-    public function getSql(\Doctrine\ORM\Query\SqlWalker $sqlWalker)
+    public function getSql(SqlWalker $sqlWalker): string
     {
         return sprintf(
             'PGP_SYM_ENCRYPT(%s, %s)',
@@ -22,7 +25,10 @@ class PgpSymEncrypt extends FunctionNode
         );
     }
 
-    public function parse(\Doctrine\ORM\Query\Parser $parser)
+    /**
+     * @throws QueryException
+     */
+    public function parse(Parser $parser): void
     {
         $parser->match(Lexer::T_IDENTIFIER);
         $parser->match(Lexer::T_OPEN_PARENTHESIS);
