@@ -1,3 +1,4 @@
 # Cache and logs (Symfony2)
 .idea
 vendor
+composer.lock
