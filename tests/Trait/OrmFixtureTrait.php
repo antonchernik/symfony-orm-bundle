@@ -34,9 +34,9 @@ trait OrmFixtureTrait
         $this->loader = $loader;
     }
 
-    public function load(array $fixtures): void
+    public function load(array $fixtures): array
     {
-        $this->loader->load(array_map(function($item) { return sprintf($this->fixturePath, $item);}, $fixtures));
+        return $this->loader->load(array_map(function($item) { return sprintf($this->fixturePath, $item);}, $fixtures));
     }
 
     public function setUpORM(ContainerInterface $container): void
