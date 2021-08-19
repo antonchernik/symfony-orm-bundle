@@ -25,4 +25,9 @@ trait DeletedAtTrait
 
         return $this;
     }
+
+    public function isDeleted(): bool
+    {
+        return null !== $this->deletedAt;
+    }
 }

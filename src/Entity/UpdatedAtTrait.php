@@ -34,4 +34,9 @@ trait UpdatedAtTrait
     {
         $this->updatedAt = new DateTime();
     }
+
+    public function isUpdated(): bool
+    {
+        return null !== $this->updatedAt;
+    }
 }
